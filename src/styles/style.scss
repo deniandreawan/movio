@@ -1,0 +1,68 @@
+// ---------------------------
+// 00 - VENDORS
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+
+// ---------------------------
+// 01 - SETTINGS
+
+@import "./settings/breakpoints";
+@import "./settings/colors";
+@import "./settings/sizes";
+@import "./settings/typography";
+@import "./settings/z-index";
+
+// ---------------------------
+// 02 - TOOLS
+
+@import "./tools/functions";
+@import "./tools/mixins";
+
+// ---------------------------
+// 03 - BASE
+
+@import "./base/base";
+@import "./base/select";
+@import "./base/button";
+
+// ---------------------------
+// 04 - COMPONENTS
+
+@import "./components/search";
+@import "./components/tooltip";
+@import "./components/loader";
+@import "./components/progressloader";
+@import "./components/pagination";
+@import "./components/image-loader";
+@import "./components/card";
+@import "./components/container";
+@import "./components/navigation";
+@import "./components/video-modal";
+@import "./components/modal";
+@import "./components/image";
+@import "./components/footer";
+@import "./components/filter";
+@import "./components/tabs";
+@import "./components/slider";
+@import "./components/grid";
+@import "./components/poster";
+@import "./components/people";
+@import "./components/backdrop";
+@import "./components/reviews";
+@import "./components/collapse";
+@import "./components/scrolltop";
+@import "./components/toast";
+
+// ---------------------------
+// 05 - PAGES
+
+@import "./pages/movies";
+@import "./pages/view";
+@import "./pages/genres";
+@import "./pages/error";
+
+// ---------------------------
+// 06 - UTILS
+
+@import "./utils/utils";
+@import "./utils/state";
+@import "./utils/animations";

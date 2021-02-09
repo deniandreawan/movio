@@ -1,0 +1,13 @@
+.reviews {
+  padding-bottom: $xl-size;
+}
+
+.reviews__header {
+  padding: $xl-size 0 $l-size;
+
+  @include mobile {
+    text-align: center;
+    padding-top: 0;
+    margin-top: 5rem;
+  }
+}
