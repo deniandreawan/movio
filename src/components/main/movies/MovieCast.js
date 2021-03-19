@@ -16,24 +16,27 @@ const MovieCast = ({ casts, movie, keywords, history, match }) => {
         <div className="movie__casts-wrapper">
           <div className="movie__casts-header header__title">
             <h1>Top Billed Casts</h1>
-            {casts.length >= 1 && (
-              <button className="button--view button--icon" onClick={onClickLink}>
-                <i className="fa fa-chevron-right" />
-              </button>
-            )}
           </div>
           <br />
-          <PeopleList people={casts.slice(0, 8)} gridClass="movie__casts-grid" />
+          <PeopleList
+            people={casts.slice(0, 8)}
+            gridClass="movie__casts-grid"
+          />
           <br />
           <br />
           {casts.length >= 1 ? (
-            <div class="movie__view-all">
-              <button className="button--primary button--block m-auto" onClick={onClickLink}>
+            <div>
+              <button
+                className="button--primary button--block m-auto"
+                onClick={onClickLink}
+              >
                 View All Casts
               </button>
             </div>
           ) : (
-            <p style={{ opacity: ".7", fontStyle: "italic" }}>No casts found for this movie.</p>
+            <p style={{ opacity: ".7", fontStyle: "italic" }}>
+              No casts found for this movie.
+            </p>
           )}
         </div>
         <MovieDetails keywords={keywords} movie={movie} />

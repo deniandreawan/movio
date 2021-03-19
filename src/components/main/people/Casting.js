@@ -19,9 +19,6 @@ const Casting = ({ casting, favorites, actor, match, history }) => {
           <br />
           <div className="movie__casts-header header__title">
             <h1>Known For</h1>
-            <button className="button--view button--icon" onClick={onClickLink}>
-              <i className="fa fa-chevron-right" />
-            </button>
           </div>
           <MovieList
             favorites={favorites}
@@ -29,13 +26,11 @@ const Casting = ({ casting, favorites, actor, match, history }) => {
             movies={casting.slice(0, 8)}
           />
           <div className="movie__casts-action">
-            <div className="movie__view-all">
-              <br />
-              <br />
-              <button className="button--primary m-auto" onClick={onClickLink}>
-                View All Casting
-              </button>
-            </div>
+            <br />
+            <br />
+            <button className="button--primary m-auto" onClick={onClickLink}>
+              View All Casting
+            </button>
           </div>
         </div>
         <div className="movie__details">
@@ -60,7 +55,8 @@ const Casting = ({ casting, favorites, actor, match, history }) => {
           {actor.also_known_as.length !== 0 && (
             <div>
               <h4>Also Known As</h4>
-              {actor.also_known_as && actor.also_known_as.map((name) => <p key={name}>{name}</p>)}
+              {actor.also_known_as &&
+                actor.also_known_as.map((name) => <p key={name}>{name}</p>)}
             </div>
           )}
         </div>
