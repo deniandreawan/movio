@@ -63,7 +63,7 @@ const ViewMovie = (props) => {
         <div className="container__wrapper">
           <MoviePoster
             id={movie.id}
-            posters={posters.length > 8 ? posters.slice(0, 8) : posters}
+            posters={posters.length > 10 ? posters.slice(0, 10) : posters}
           />
           <button
             className="button--primary button--block m-auto"
