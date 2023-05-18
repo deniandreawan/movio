@@ -35,7 +35,7 @@ const PaginationBar = ({
         nextPageText="Next"
         onChange={onChange}
         disabled={isLoading}
-        pageRangeDisplayed={isMobile ? "3" : pageRangeDisplayed}
+        pageRangeDisplayed={isMobile ? 3 : pageRangeDisplayed}
         prevPageText="Prev"
         totalItemsCount={totalItemsCount > 1000 ? 1000 : totalItemsCount}
       />

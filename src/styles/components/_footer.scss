@@ -7,7 +7,7 @@
   z-index: map-get($z-index, 'footer');
 
   span {
-  	@include mobile 
+  	@include mobile;
   	font-size: 1.3rem;
   }
 

@@ -7,7 +7,7 @@ const Loader = (propName) => (Component) => {
     const checkIfEmpty = () => {
       if (typeof propName === "string") {
         return isEmpty(props[propName]);
-      } else if (typeof propName === "array") {
+      } else if (typeof propName === "object") {
         return propName.every((prop) => isEmpty(props[prop]));
       } else {
         return false;
