@@ -22,11 +22,11 @@ VITE_API_KEY=[yourapikey]
 ### Run development server
 
 ```sh
-$ npm start
+$ pnpm dev
 ```
 
 ### Build the project
 
 ```sh
-$ npm run build
+$ pnpm build
 ```
