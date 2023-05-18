@@ -1,4 +1,4 @@
-import * as action from "constants/actionType";
+import * as action from "@/constants/actionType";
 
 export const fetchTrendingMovies = (query, page = 1) => ({
   type: action.FETCH_TRENDING_MOVIES,

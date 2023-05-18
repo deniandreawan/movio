@@ -1,5 +1,5 @@
 import { takeLatest, takeEvery } from "redux-saga/effects";
-import * as action from "constants/actionType";
+import * as action from "@/constants/actionType";
 
 import {
   fetchRequestSaga,

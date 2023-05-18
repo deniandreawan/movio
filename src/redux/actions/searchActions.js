@@ -1,4 +1,4 @@
-import * as action from "constants/actionType";
+import * as action from "@/constants/actionType";
 
 export const search = (query) => ({
   type: action.SEARCH,

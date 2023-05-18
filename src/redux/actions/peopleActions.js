@@ -1,4 +1,4 @@
-import * as action from "constants/actionType";
+import * as action from "@/constants/actionType";
 
 export const fetchSelectedPerson = (id) => ({
   type: action.FETCH_SELECTED_PERSON,

@@ -1,5 +1,5 @@
 import { call, put, select, all } from "redux-saga/effects";
-import { history } from "App";
+import { history } from "@/App";
 import {
   IS_LOADING,
   UPDATE_QUERY,
@@ -8,8 +8,8 @@ import {
   FETCH_MAIN_MOVIES_SUCCESS,
   SEARCH_SUCCESS,
   UPDATE_SEARCH_QUERY,
-} from "constants/actionType";
-import * as api from "services/api";
+} from "@/constants/actionType";
+import * as api from "@/services/api";
 
 function updateQuery(year, sort, genre) {
   const yearFilter = year ? `&year=${year}&first_air_date_year=${year}` : "";

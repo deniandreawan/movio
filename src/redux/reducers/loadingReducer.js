@@ -1,4 +1,4 @@
-import * as act from "constants/actionType";
+import * as act from "@/constants/actionType";
 
 const initialState = {
   isLoading: false,

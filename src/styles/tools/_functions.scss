@@ -2,6 +2,8 @@
 // FUNCTIONS ---------
 //
 
+@use "sass:math";
+
 @function rem($pixels, $context: $baseFontSize) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
@@ -11,5 +13,5 @@
     $context: $context * 1px;
   }
 
-  @return $pixels / $context * 1rem;
+  @return calc($pixels / $context) * 1rem;
 }

@@ -1,4 +1,4 @@
-import * as action from "constants/actionType";
+import * as action from "@/constants/actionType";
 
 export const setYearFilter = (year, target) => ({
   type: action.SET_YEAR_FILTER,
