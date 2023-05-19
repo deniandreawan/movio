@@ -6,7 +6,7 @@ Built with React JS | TMDB api
 ### Install Dependencies
 
 ```sh
-$ npm install
+$ pnpm install
 ```
 
 ### Get API key
