@@ -1,53 +1,52 @@
-import useDidMount from "@/hooks/useDidMount";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
-/**
- *
- * @param {string} path
- */
+import useDidMount from "./useDidMount";
 
 const usePageSaver = (path) => {
-    const { pathname } = useLocation();
-    const p = path || pathname.replace("/", "");
-    const [currentPage, setCurrentPage] = useState(() =>
-        localStorage.movioPage ? JSON.parse(localStorage.movioPage)[p] : 1
-    );
-    const didMount = useDidMount();
+  const { pathname } = useLocation();
+  const p = path || pathname.replace("/", "");
+  const [currentPage, setCurrentPage] = useState(() =>
+    localStorage.movioPage ? JSON.parse(localStorage.movioPage)[p] : 1
+  );
+  const didMount = useDidMount();
 
-    useLayoutEffect(() => {
-        if (localStorage.movioPage) {
-            const movioPage = JSON.parse(localStorage.getItem("movioPage"));
-            const page = movioPage[p];
+  useLayoutEffect(() => {
+    const storageItem = localStorage.getItem("movioPage");
 
-            if (typeof movioPage[p] !== undefined) {
-                setCurrentPage(page);
-            }
-        } else {
-            localStorage.setItem(
-                "movioPage",
-                JSON.stringify({
-                    [p]: currentPage,
-                })
-            );
-        }
-    }, [currentPage, p]);
+    if (storageItem) {
+      const movioPage = JSON.parse(storageItem);
+      const page = movioPage[p];
 
-    useEffect(() => {
-        if (didMount) {
-            const movioPage = JSON.parse(localStorage.getItem("movioPage"));
+      if (typeof movioPage[p] !== undefined) {
+        setCurrentPage(page);
+      }
+    } else {
+      localStorage.setItem(
+        "movioPage",
+        JSON.stringify({
+          [p]: currentPage,
+        })
+      );
+    }
+  }, []);
 
-            localStorage.setItem(
-                "movioPage",
-                JSON.stringify({
-                    ...movioPage,
-                    [p]: currentPage,
-                })
-            );
-        }
-    }, [currentPage, didMount, p]);
+  useEffect(() => {
+    const storageItem = localStorage.getItem("movioPage");
 
-    return { currentPage, setCurrentPage };
+    if (didMount && storageItem) {
+      const movioPage = JSON.parse(storageItem);
+
+      localStorage.setItem(
+        "movioPage",
+        JSON.stringify({
+          ...movioPage,
+          [p]: currentPage,
+        })
+      );
+    }
+  }, [currentPage]);
+
+  return { currentPage, setCurrentPage };
 };
 
 export default usePageSaver;

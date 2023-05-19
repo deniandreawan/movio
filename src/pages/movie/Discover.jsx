@@ -36,7 +36,7 @@ const DiscoverMovies = (props) => {
         fetchDiscoverMovies(`${query}${filter.discover.query}`, currentPage)
       );
     }
-  }, [currentPage, didMount, discoverMovies, dispatch, filter.discover.query]);
+  }, [filter.discover.query]);
 
   const handlePageChange = (page) => {
     if (discoverMovies.page !== page) {

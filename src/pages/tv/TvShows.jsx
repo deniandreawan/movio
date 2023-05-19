@@ -32,7 +32,7 @@ const TvShows = () => {
     if (isEmpty(tvShows) || didMount) {
       dispatch(fetchTvShows(`${query}${filter.tv.query}`, currentPage));
     }
-  }, [currentPage, didMount, dispatch, filter.tv.query, tvShows]);
+  }, [filter.tv.query]);
 
   const handlePageChange = (page) => {
     if (tvShows.page !== page) {

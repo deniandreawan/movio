@@ -1,11 +1,11 @@
 import React from "react";
-import { createRoot } from 'react-dom/client';
+import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import WebFont from "webfontloader";
 
 import { store, persistor } from "./redux/store";
-import App from "./App";
+import AppRouter from "./App";
 import LoadingScreen from "./components/shared/LoadingScreen";
 import "normalize.css/normalize.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,16 +17,11 @@ WebFont.load({
   },
 });
 
-const container = document.getElementById('root');
-const root = createRoot(container);
-
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={<LoadingScreen />} persistor={persistor}>
-        <App />
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>
+render(
+  <Provider store={store}>
+    <PersistGate loading={<LoadingScreen />} persistor={persistor}>
+      <AppRouter />
+    </PersistGate>
+  </Provider>,
+  document.getElementById("root")
 );
-
